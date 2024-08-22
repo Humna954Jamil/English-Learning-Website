@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="introductionPage" class="main-container">
+      <!-- introduction page content goes here -->
+      <h1>Welcome to the Quiz</h1>
+      <p>This is a quiz to test your knowledge. Get ready!</p>
+      <p>
+        Redirecting to the quiz page in <span id="timeLeft">5</span> seconds...
+      </p>
+      <a class="link" id="enterQuiz">Enter Quiz</a>
+    </div>
+  </body>
+  <script>
+    let count = 5; // Count down from 5 seconds
+    let countDown;
+
+    function startIntroductionPage() {
+      document.getElementById("timeLeft").innerText = count; // Initialize timeLeft
+      countDown = setInterval(startIntroCountDown, 1000);
+    }
+    let button = document.getElementById("enterQuiz");
+    button.addEventListener("click", enterQuiz);
+
+    startIntroductionPage();
+
+    function enterQuiz() {
+      window.location.href = "quiz.html";
+    }
+
+    function startIntroCountDown() {
+      setTimeout(function () {
+        if (count > 0) {
+          count = count - 1;
+          document.getElementById("timeLeft").innerText = count; // Update timeLeft
+        }
+        if (count == 0) {
+          clearInterval(countDown);
+          enterQuiz();
+        }
+      }, 1000);
+    }
+  </script>
+</html>

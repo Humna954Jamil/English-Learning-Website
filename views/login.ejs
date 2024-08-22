@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
+    integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <body class="fs-1">
+    <!-- Starting Form -->
+    <%- include('header') %>
+
+    <div
+      class="container w-25 bg-dark text-white border-3 rounded-4 mt-5 mb-0 p-2"
+    >
+      <h1 class="text-center mt-4 fs-1">Login Here</h1>
+      <form action="/login" method="post">
+        <div class="mb3">
+          <label> <b>Email</b></label>
+          <input
+            type="email"
+            name="email"
+            placeholder="email"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb3">
+          <label> <b>Password</b></label>
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            class="form-control"
+            required
+          />
+        </div>
+        <input
+          type="submit"
+          value="login"
+          name="login"
+          class="btn btn-outline-info text-white mt-5 mb-4"
+        />
+        <button class="btn btn-outline-info mt-5 mb-4">
+          <a class="text-white text-decoration-none" href="/">Back</a>
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

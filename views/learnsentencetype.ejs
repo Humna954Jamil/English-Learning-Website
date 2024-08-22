@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ... (your existing head content) -->
+  </head>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+  integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+</head>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
+integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+crossorigin="anonymous"
+referrerpolicy="no-referrer"
+></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .heading{
+      font-size: 2rem;
+      font-weight: 900;
+    }
+    .paragraph1{
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  </style>
+  <body>
+    <%- include('header') %>
+
+    <!-- <form action="/learneng" method="post" id="wordForm">
+      <label for="wordInput">Enter a word:</label>
+      <input type="text" id="wordInput" name="wordInput" required />
+      <button type="submit">Search</button>
+    </form> -->
+
+<div class="container heading w-50 align-items-center justify-content-center font-monospace fw-bolder mt-5 mb-5 text-center ">
+  <h1>Sentence Type</h1>
+
+
+</div>
+
+<div class="container w-50 align-items-center justify-content-center ">
+
+
+    <form action="/learnsentencetype" method="post" >
+      <label
+        for="default-search"
+        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+        >Search</label
+      >
+      <div class="relative">
+        <div
+          class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+        >
+          
+        </div>
+        <input
+          name="wordInput"
+          type="text"
+          id="default-search"
+          class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Enter word to find its type..."
+          required
+        />
+        <button
+          type="submit"
+          class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="container  w-50 align-items-center justify-content-center mt-5 mx-auto">
+
+    <% if (typeof result !== 'undefined') { %>
+      <h2 class="heading">Examples of "<%= word %>" Sentences:</h2>
+      <p class="paragraph1 mt-3">Meanings:</p>
+      <ul>
+          <% result.forEach(sentence => { %>
+              <li><%= sentence %></li>
+          <% }) %>
+      </ul>
+  <% } else { %>
+      <!-- Handle case where result is not defined -->
+      <% if (typeof word !== 'undefined') { %>
+          <p class="paragraph1">No results found for "<%= word %>".</p>
+      <% } %>
+  <% } %>
+    
+  </div>
+  <div class="container  w-50 align-items-center justify-content-center mt-5 mx-auto">
+    <button class="btn btn-primary mt-3 mb-3">
+      <a class="text-white text-decoration-none" href="/choice">Back</a>
+    </button>
+  </div>
+    <!-- ... (your existing body content) -->
+  </body>
+</html>

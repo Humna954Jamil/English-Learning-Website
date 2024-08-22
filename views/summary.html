@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summary</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="main-container">
+      <div id="result" class="summary"></div>
+
+      <!-- Retry Quiz button -->
+      <button id="retryButton" class="btn" onclick="retryQuiz()">
+        Retry Quiz
+      </button>
+    </div>
+
+    <script>
+      // Retry Quiz function
+      function retryQuiz() {
+        // Redirect to the main quiz page (quiz.html)
+        window.location.href = "quiz.html";
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const resultContainer = document.getElementById("result");
+
+        // Retrieve the result data from local storage
+        const quizResult = JSON.parse(localStorage.getItem("quizResult"));
+
+        // Check if result data exists
+        if (quizResult) {
+          resultContainer.innerHTML = `
+                    <p>You scored ${quizResult.userScore} out of ${quizResult.totalQuestions}!</p>
+                    <br/>
+                    <p>Incorrect Answers:</p>
+                    ${quizResult.incorrectAnswersHtml}
+                    <br/>
+                    <p>Correct Answers</p>
+                    ${quizResult.correctAnswersHtml}
+                `;
+        } else {
+          resultContainer.innerHTML = "<p>No result data found.</p>";
+        }
+
+        // Clear the result data from local storage
+      });
+    </script>
+  </body>
+</html>
