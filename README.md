@@ -1,4 +1,3 @@
-#English_Learning_Mnagement_System
 This student-centered platform is designed to facilitate English language learning through three specialized types of lessons:
 
 Vocabulary-Based Lessons: Students can search for word meanings, with the system providing accurate definitions if the word exists in the database. If the word is not found, a "no result found" message is displayed, ensuring clarity and focused learning.
