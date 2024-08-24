@@ -9,3 +9,13 @@ To further support student learning, a dedicated quiz section is available to te
 The platform also includes an "About Me" page, which introduces the teachers and provides insight into their qualifications and teaching philosophy. This fosters a connection between students and instructors, enhancing the overall learning experience.
 
 The website is intuitively structured with key navigational pages, including "Home," "Lessons," "Quiz," and "About Me," ensuring that students can easily access all the features and resources available. This seamless interface is designed to provide an engaging and user-friendly learning environment.
+
+Here is the preview:
+
+![image](https://github.com/user-attachments/assets/dc3bd78b-6913-4748-824a-e2ce41b2237e)
+
+![image](https://github.com/user-attachments/assets/ad457f76-42be-41c2-801b-acb2690ee103)
+
+![image](https://github.com/user-attachments/assets/c2223a52-b5f2-4e06-a949-30cb7bcd38e8)
+
+![image](https://github.com/user-attachments/assets/9ed215a0-47f2-41db-a40d-1e0b59207956)
